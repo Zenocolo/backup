@@ -1,3 +1,11 @@
+# Locals
+locals {
+  prefix = "eu"
+  tags = {
+    environment = local.prefix
+  }
+}
+
 # Recovery Vault
 resource "azurerm_recovery_services_vault" "vault" {
   name                = "vault-${local.prefix}"
